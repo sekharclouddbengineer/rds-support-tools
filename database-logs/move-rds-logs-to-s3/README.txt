@@ -23,3 +23,5 @@ python rdslogstos3.py --bucketname name --rdsinstancename instancename --region 
 backup_status.<timestamp> will have the progress of the execution. Please note that for RDS sql Server, .xel and .trc files contain binaries, they will not be moved to S3. Need you read the .trc and .xel files, please use appropriate tools to view the files. 
 
 NOTE: PLEASE MAKE SURE TO USE A PRIVATE BUCKET. DO NOT USE A PUBLIC BUCKET.
+If you running from windows , use the below command to append timestamp to the log file
+py rdslogstos3.py --bucketname chandrapathivadadba --rdsinstancename "postgres-rds-chandrapathivada" --region us-west-2 > s3_log_backup_status.%date:~4,2%%date:~7,2%%date:~10,4%_%time:~0,2%%time:~3,2%%time:~6,2%.log
